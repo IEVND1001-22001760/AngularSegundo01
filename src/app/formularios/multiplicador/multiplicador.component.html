@@ -1,0 +1,19 @@
+<div>
+    <h1>Multiplicar Numeros br</h1>
+    <form [formGroup]="formulario">
+        <div>
+            <label for="Numero1">Numero 1:</label>
+            <input id="numero1" formControlName="numero1" type="number">
+        </div>
+        <div>
+            <label for="Numero1">Numero 2:</label>
+            <input id="numero2" formControlName="numero2" type="number">
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="multNumeros()">Multiplicar</button>
+            <div ngIf="resultado !== null">
+                <h2>Resultado: {{resultado}}</h2>
+            </div>
+        </div>
+    </form>
+</div>

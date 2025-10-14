@@ -1,0 +1,66 @@
+
+<!-- <form [formGroup]="formulario">
+    <div class="d-flex justify-content-center align-items-center vh-90">
+        <div class="card" style="width: 32rem;">
+            <div class="border text-center">Escribe las distancias:
+                <br><br>
+                <div>
+                <label for="numerox1">X1:  </label>
+                <input id="numx1" formControlName="numx1" type="number">
+                </div>
+                <br><br>
+                <div>
+                <label for="numx2">X2:  </label>
+                <input id="numx2" formControlName="numx2" type="number">
+                </div>
+                <br><br>
+                <div>
+                <label for="numy1">Y1: </label>
+                <input id="numy1" formControlName="numy1" type="number">
+                </div>
+                <br><br>
+                <div>
+                <label for="numy2">Y2: </label>
+                <input id="numy2" formControlName="numy2" type="number">
+                </div>
+                <br><br>
+                <button type="button" class="btn btn-primary" (click)="multNumeros()">Calcular</button>
+                <div ngIf="resultado !== null">
+                    <br>
+                    <h5 >La distancia entre dos puntos es: {{resultado}}</h5>
+                </div>
+                <br><br>
+                <br>   
+            </div>
+        </div>
+    </div>
+</form> -->
+
+
+
+<form class="max-w-sm mx-auto" [formGroup]="formulario">
+  <div class="mb-5"><!-- Distancia X1 -->
+    <label for="numerox1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">X1: </label>
+    <input type="number" id="numx1" formControlName="numx1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="X1"/>
+  </div>
+  <div class="mb-5"><!-- Distancia Y1 -->
+    <label for="numy1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Y1: </label>
+    <input type="number" id="numy1" formControlName="numy1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Y1"/>
+  </div>
+  <div class="mb-5"><!-- Distancia X2 -->
+    <label for="numx2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">X2: </label>
+    <input type="number" id="numx2" formControlName="numx2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="X2"/>
+  </div>
+  <div class="mb-5"><!-- Distancia Y2 -->
+    <label for="numy2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Y2: </label>
+    <input type="number" id="numy2" formControlName="numy2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Y2"/>
+  </div>
+  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" (click)="multNumeros()">Calcular</button>
+  <div>
+    <br>
+    <h5 >La distancia entre dos puntos es: {{resultado}}</h5>
+  </div>
+</form>
+
+
+

@@ -1,0 +1,22 @@
+<br>
+<form [formGroup]="formulario">
+    <div class="d-flex justify-content-center align-items-center vh-90">
+        <div class="card" style="width: 32rem;">
+            <div class="border text-center">
+            <br>
+            <div>
+                <label for="numero1">Ingresa A:</label>
+                <input id="numero1" formControlName="numero1" type="number">
+            </div>
+            <br>
+            <div>
+                <label for="numero2">Ingresa B:</label>
+                <input id="numero2" formControlName="numero2" type="number">
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary" (click)="calculo()">Calcular</button>
+            <H5>{{this.proceso}} = {{this.resultado}}</H5>
+            </div>
+        </div>
+    </div>
+</form>
