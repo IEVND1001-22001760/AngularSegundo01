@@ -1,0 +1,71 @@
+
+<div class="max-w-4xl mx-auto p-4">
+  <p class="text-center text-xl font-bold mb-6">Horoscopo Chino</p>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="col-span-1">
+      <form id="datos-personales-form" [formGroup]="formulario" >
+        <div class="mb-5">
+          <label for="nombreP" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Nombre</label>
+          <input type="text" id="nombreP" formControlName="nombreP" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+        
+        <div class="mb-5">
+          <label for="aPaterno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Apellido Paterno</label>
+          <input type="text" id="aPaterno" formControlName="aPaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+        
+        <div class="mb-5">
+          <label for="aMaterno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Apellido Materno</label>
+          <input type="text" id="aMaterno" formControlName="aMaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+        
+        <h5 class="text-center font-medium mt-6 mb-3">Fecha de nacimiento</h5>
+        <div class="grid grid-cols-3 gap-3 mb-5">
+          <div>
+            <label for="dia" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Día</label>
+            <input type="number" id="dia" formControlName="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          </div>
+          <div>
+            <label for="mes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Mes</label>
+            <input type="number" id="mes" formControlName="mes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          </div>
+          <div>
+            <label for="anio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Año</label>
+            <input type="number" id="anio" formControlName="anio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          </div>
+        </div>
+        
+        <h5 class="text-center font-medium mt-6 mb-3">Sexo</h5>
+        <div class="mb-5">
+          <div class="flex items-center mb-4">
+            <input id="masculino" type="radio" name="sexo" value="M" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+            <label for="masculino" class="block ms-2 text-sm font-medium text-gray-900 dark:text-black">Masculino</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input id="femenino" type="radio" name="sexo" value="F" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+            <label for="femenino" class="block ms-2 text-sm font-medium text-gray-900 dark:text-black">Femenino</label>
+          </div>
+        </div>
+        
+        <div class="text-center mt-6">
+          <button type="submit" (click)="operaciones()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Resultado</button>
+        </div>
+      </form>
+    </div>
+    
+    <div ngIf="resultadoS" class="col-span-1 md:border-l md:pl-8 border-gray-300 dark:border-gray-600">
+      <h5 class="text-center font-bold">Hola {{nombreN}} {{pPaterno}} {{pMaterno}}</h5>
+      <br>
+      <h3 class="text-center font-bold">Tienes {{edadTotal}} años</h3>
+      <br>
+      <h3 class="text-center font-bold">Tu signo zodiacal</h3>
+      <h2 class="text-center font-bold">Es {{resultadoS?.nombre}}</h2>
+      <!--  -->
+      <img class="text-center" [src]="resultadoS?.imagen" [alt]="resultadoS?.nombre">
+
+    </div>
+    
+  </div>
+</div>

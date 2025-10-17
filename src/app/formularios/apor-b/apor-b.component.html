@@ -1,22 +1,20 @@
 <br>
-<form [formGroup]="formulario">
+<form class="max-w-sm mx-auto" [formGroup]="formulario">
+    <p class="text-center font-bold">A x B</p>
     <div class="d-flex justify-content-center align-items-center vh-90">
         <div class="card" style="width: 32rem;">
-            <div class="border text-center">
-            <br>
-            <div>
-                <label for="numero1">Ingresa A:</label>
-                <input id="numero1" formControlName="numero1" type="number">
-            </div>
-            <br>
-            <div>
-                <label for="numero2">Ingresa B:</label>
-                <input id="numero2" formControlName="numero2" type="number">
-            </div>
-            <br>
-            <button type="button" class="btn btn-primary" (click)="calculo()">Calcular</button>
-            <H5>{{this.proceso}} = {{this.resultado}}</H5>
-            </div>
+  <div class="mb-5">
+    <label for="numero1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Ingresa A:</label>
+    <input id="numero1" formControlName="numero1" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+  <div class="mb-5">
+    <label for="numero2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Ingresa B:</label>
+    <input id="numero2" formControlName="numero2" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+  </div>
+  
+  <button type="button" class="btn btn-primary" (click)="calculo()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calcular</button>
+  <H5 class="text-center font-bold">{{this.proceso}} = {{this.resultado}}</H5>
         </div>
     </div>
 </form>
+
